@@ -71,22 +71,15 @@
     with hand-tuned implementations.
   </p>
   <p>
-    Such progress has concentrated on dense kernels, 
-    where the optimization space is comparatively tractable. 
-    The relevant transformations are well established (tiling, unrolling, vectorization, loop ordering), the search space admits systematic enumeration, and performance
-    is largely predictable from the source.
-  </p>
-  <p>
-    We argue that sparse kernels are less amenable to such treatment. The action space is
-    substantially larger and less structured, spanning storage format selection, matrix reordering
-    and partitioning, and the tradeoff between preprocessing cost and the reuse that preprocessing
-    enables. Two properties are particular to this setting. Optimizations amortize only across
-    repeated invocations, so an agent must reason about cost over a workload rather than a single
-    execution, which requires that performance tradeoffs be evaluated explicitly rather than read
-    off a timing run. Transformations alter data layout, so an agent must carry persistent state
-    across iterations, which requires loop structures that accumulate and refine intermediate
-    findings rather than restarting from the prompt. Together these suggest that sparse kernels warrant
-    dedicated study rather than the direct transfer of methods developed for the dense case.
+    Such progress has concentrated on dense kernels, where the transformations are well
+    established and performance is largely predictable from the source. 
+    Sparse kernels are less
+    amenable. The action space spans storage format, reordering, and partitioning, and its central
+    tradeoff, preprocessing cost against the reuse it enables, resolves only across repeated
+    invocations rather than a single run. 
+    Layout-altering transformations further require an agent
+    to carry state between iterations. We argue this warrants dedicated study rather than the
+    direct transfer of methods developed for the dense case.
   </p>
 
   <p>
