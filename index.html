@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASK 2027 — Agentic Methods for Sparse and Irregular HPC Kernels</title>
+<meta name="description" content="Half-day workshop on agentic LLM workflows for sparse and irregular HPC kernels, proposed for IPDPS 2027, Seattle.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #5c5c5c;
+    --rule: #e0e0e0; --accent: #8a2f2f; --band: #f6f5f3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16181a; --fg:#e8e6e3; --muted:#a0a0a0;
+            --rule:#32363a; --accent:#e08a7a; --band:#1e2124; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+  header { border-bottom: 1px solid var(--rule); padding: 2.75rem 0 1.75rem; }
+  h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 .5rem; font-weight: 600; }
+  h1 .acr { color: var(--accent); }
+  .venue { color: var(--muted); font-size: .95rem; margin: 0; }
+  .notice {
+    background: var(--band); border-left: 3px solid var(--accent);
+    padding: .7rem .9rem; margin: 1.5rem 0 0;
+    font-size: .9rem; color: var(--muted);
+  }
+  nav { margin: 1.25rem 0 0; font-size: .9rem; }
+  nav a { color: var(--fg); margin-right: 1.1rem; text-decoration: none; border-bottom: 1px solid var(--rule); }
+  nav a:hover { border-bottom-color: var(--accent); }
+  section { padding: 2.25rem 0; border-bottom: 1px solid var(--rule); }
+  h2 { font-size: 1.15rem; margin: 0 0 1rem; font-weight: 600; letter-spacing: .01em; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+  li { margin-bottom: .35rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  td { padding: .55rem .5rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.date { white-space: nowrap; color: var(--muted); width: 11rem; }
+  .fine { font-size: .875rem; color: var(--muted); }
+  footer { padding: 2rem 0 3rem; font-size: .875rem; color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1><span class="acr">ASK 2027</span><br>Workshop on Agentic Methods for Sparse and Irregular HPC Kernels</h1>
+  <p class="venue">Half day, to be held with IPDPS 2027 · June 1–2, 2027 · Seattle, Washington</p>
+  <div class="notice">
+    This workshop has been proposed to IPDPS 2027 and is awaiting a decision.
+    Everything on this page is tentative until the notification date of October 12, 2026.
+  </div>
+  <nav>
+    <a href="#about">Overview</a>
+    <a href="#cfc">Call for Contributions</a>
+    <a href="#dates">Important Dates</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2>Overview</h2>
+  <p>
+    Sparse and irregular kernels resist the usual optimization playbook. Performance depends on
+    the input as much as on the code. Format choice — CSR, ELL, BSR, or a hybrid — frequently
+    matters more than anything the compiler does. A kernel can be correct and still run an order
+    of magnitude below the bandwidth the machine can deliver.
+  </p>
+  <p>
+    Language models can now write plausible HPC kernels. Writing a kernel and optimizing one are
+    different problems. An agent that compiles its output, runs it on real hardware, reads the
+    counters, and revises has access to information that no amount of prompting supplies.
+  </p>
+  <p>
+    ASK is about that loop, and about whether it actually works. We want results from people
+    building these systems, and we want honest accounting of where they fail. Sparse kernels make
+    a good testbed precisely because passing a correctness test tells you almost nothing about
+    whether the code is any good.
+  </p>
+  <p>
+    The workshop brings together two communities that rarely share a room: people who work on
+    sparse and combinatorial kernels, and people who build LLM agents for code.
+  </p>
+</section>
+
+<section id="cfc">
+  <h2>Call for Contributions</h2>
+  <p>We invite papers on topics including:</p>
+  <ul>
+    <li>Agentic optimization loops: compile, run, profile, revise</li>
+    <li>Sparsity format and algorithm selection by LLM agents</li>
+    <li>Multi-agent decomposition of kernel development tasks</li>
+    <li>Compilers, profilers, and sparse DSLs as agent tools</li>
+    <li>Correctness and numerical verification of agent-written kernels</li>
+    <li>Agentic performance portability across CPUs, GPUs, and accelerators</li>
+    <li>Benchmarks, datasets, and evaluation methodology for HPC coding agents</li>
+    <li>Cost, energy, and human-in-the-loop trade-offs</li>
+    <li>Negative results and failure analyses</li>
+  </ul>
+  <p>
+    Dense, stencil, and FFT kernels are in scope when the contribution is the agentic method
+    rather than the kernel itself.
+  </p>
+  <p>
+    Papers may be up to 10 pages in IEEE conference format, including references. Each submission
+    receives at least three reviews. Accepted papers appear in the IPDPS workshop proceedings
+    (IPDPSW) and are submitted to the IEEE Xplore Digital Library. At least one author must
+    register and present in person.
+  </p>
+  <p class="fine">
+    Because agentic results vary between runs, submissions should report model version, sampling
+    parameters, and the number of trials behind any reported number.
+  </p>
+</section>
+
+<section id="dates">
+  <h2>Important Dates</h2>
+  <table>
+    <tr><td class="date">January 29, 2027</td><td>Paper submission deadline</td></tr>
+    <tr><td class="date">February 22, 2027</td><td>Author notification</td></tr>
+    <tr><td class="date">March 6, 2027</td><td>Camera-ready deadline</td></tr>
+    <tr><td class="date">June 1–2, 2027</td><td>Workshop</td></tr>
+  </table>
+  <p class="fine" style="margin-top:1rem">
+    All deadlines are Anywhere on Earth. Dates are tentative and will be confirmed after the
+    IPDPS 2027 workshop decisions.
+  </p>
+</section>
+
+<footer>
+  <p>
+    Organizers to be announced.
+    Questions: <a href="mailto:sohyp@ornl.gov">sohyp@ornl.gov</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
