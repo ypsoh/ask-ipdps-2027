@@ -65,25 +65,36 @@
 <section id="about">
   <h2>Overview</h2>
   <p>
-    Sparse and irregular kernels resist the usual optimization playbook. Performance depends on
-    the input as much as on the code. Format choice — CSR, ELL, BSR, or a hybrid — frequently
-    matters more than anything the compiler does. A kernel can be correct and still run an order
-    of magnitude below the bandwidth the machine can deliver.
+    This workshop addresses the design of agentic LLM workflows for sparse and irregular kernels
+    in high-performance computing. Agentic code generation has produced substantial results for
+    HPC kernels, with reported systems that write, tune, and port code at performance competitive
+    with hand-tuned implementations.
   </p>
   <p>
-    Language models can now write plausible HPC kernels. Writing a kernel and optimizing one are
-    different problems. An agent that compiles its output, runs it on real hardware, reads the
-    counters, and revises has access to information that no amount of prompting supplies.
+    Such progress has concentrated on dense kernels, 
+    where the optimization space is comparatively tractable. 
+    The relevant transformations are well established (tiling, unrolling, vectorization, loop ordering), the search space admits systematic enumeration, and performance
+    is largely predictable from the source.
   </p>
   <p>
-    ASK is about that loop, and about whether it actually works. We want results from people
-    building these systems, and we want honest accounting of where they fail. Sparse kernels make
-    a good testbed precisely because passing a correctness test tells you almost nothing about
-    whether the code is any good.
+    We argue that sparse kernels are less amenable to such treatment. The action space is
+    substantially larger and less structured, spanning storage format selection, matrix reordering
+    and partitioning, and the tradeoff between preprocessing cost and the reuse that preprocessing
+    enables. Two properties are particular to this setting. Optimizations amortize only across
+    repeated invocations, so an agent must reason about cost over a workload rather than a single
+    execution, which requires that performance tradeoffs be evaluated explicitly rather than read
+    off a timing run. Transformations alter data layout, so an agent must carry persistent state
+    across iterations, which requires loop structures that accumulate and refine intermediate
+    findings rather than restarting from the prompt. Together these suggest that sparse kernels warrant
+    dedicated study rather than the direct transfer of methods developed for the dense case.
   </p>
+
   <p>
-    The workshop brings together two communities that rarely share a room: people who work on
-    sparse and combinatorial kernels, and people who build LLM agents for code.
+    This workshop invites contributions across the full range of research applying agentic LLMs to
+    sparse and irregular kernel development. Relevant work includes workflow and system design,
+    empirical studies of existing agents, benchmarks and evaluation methodology, compiler and
+    tooling support, and experience reports from practice. We are equally interested in successful
+    and unsuccessful outcomes, and negative results and failure analyses are explicitly in scope.
   </p>
 </section>
 
