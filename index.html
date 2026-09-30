@@ -50,7 +50,7 @@
 
 <header>
   <h1><span class="acr">ASK 2027</span><br>Workshop on Agentic Methods for Sparse and Irregular HPC Kernels</h1>
-  <p class="venue">Half day, to be held with IPDPS 2027 · June 1–2, 2027 · Seattle, Washington</p>
+  <p class="venue">Half day, to be held with IPDPS 2027 · June 1 or 2, 2027 · Seattle, Washington</p>
   <div class="notice">
     This workshop has been proposed to IPDPS 2027 and is awaiting a decision.
     Everything on this page is tentative until the notification date of October 12, 2026.
@@ -59,35 +59,36 @@
     <a href="#about">Overview</a>
     <a href="#cfc">Call for Contributions</a>
     <a href="#dates">Important Dates</a>
+    <a href="#organizers">Organizers</a>
   </nav>
 </header>
 
 <section id="about">
   <h2>Overview</h2>
   <p>
-    This workshop addresses the design of agentic LLM workflows for sparse and irregular kernels
-    in high-performance computing. Agentic code generation has produced substantial results for
-    HPC kernels, with reported systems that write, tune, and port code at performance competitive
-    with hand-tuned implementations.
+    ASK is a half-day workshop on agentic large-language-model (LLM) workflows for
+    high-performance computing kernels, centered on sparse and irregular kernels. Its premise is
+    the distinction between <em>generation</em> and <em>agency</em>. A generative system emits a
+    candidate kernel from a prompt. An agentic system selects a data structure, compiles, executes
+    on real hardware, reads performance counters, diagnoses the bottleneck, and revises. The first
+    is now well studied; the second is largely unexamined, and it is where the remaining
+    performance lies.
   </p>
   <p>
-    Such progress has concentrated on dense kernels, where the transformations are well
-    established and performance is largely predictable from the source. 
-    Sparse kernels are less
-    amenable. The action space spans storage format, reordering, and partitioning, and its central
-    tradeoff, preprocessing cost against the reuse it enables, resolves only across repeated
-    invocations rather than a single run. 
-    Layout-altering transformations further require an agent
-    to carry state between iterations. We argue this warrants dedicated study rather than the
-    direct transfer of methods developed for the dense case.
+    Sparse kernels make this question concrete. The decisions that govern their performance are
+    largely invisible in the source: which representation to store the data in, how to reorder and
+    partition it, and how much preprocessing to invest against the reuse it buys. These decisions
+    depend on the input as much as on the code, interact with one another, and rarely admit a
+    single best answer. That is an unusually good match for an agent that can try something,
+    measure the result, and revise, and we expect it to produce workflow designs quite different
+    from those developed for the dense case.
   </p>
-
   <p>
-    This workshop invites contributions across the full range of research applying agentic LLMs to
-    sparse and irregular kernel development. Relevant work includes workflow and system design,
-    empirical studies of existing agents, benchmarks and evaluation methodology, compiler and
-    tooling support, and experience reports from practice. We are equally interested in successful
-    and unsuccessful outcomes, and negative results and failure analyses are explicitly in scope.
+    The workshop brings together the sparse and combinatorial kernel community and the agentic LLM
+    community, which today publish in largely disjoint venues. We welcome workflow and system
+    design, empirical studies of existing agents, benchmarks and evaluation methodology, compiler
+    and tooling support, and experience reports. Negative results and failure analyses are
+    explicitly in scope.
   </p>
 </section>
 
@@ -95,10 +96,12 @@
   <h2>Call for Contributions</h2>
   <p>We invite papers on topics including:</p>
   <ul>
-    <li>Agentic optimization loops: compile, run, profile, revise</li>
-    <li>Sparsity format and algorithm selection by LLM agents</li>
-    <li>Multi-agent decomposition of kernel development tasks</li>
-    <li>Compilers, profilers, and sparse DSLs as agent tools</li>
+    <li>Agentic loops for kernel optimization: compile, run, profile, revise; counter- and
+        roofline-guided search; autonomous autotuning</li>
+    <li>Sparsity format and algorithm selection by LLM agents; input-dependent specialization</li>
+    <li>Multi-agent decomposition of HPC tasks (generate, verify, tune, port)</li>
+    <li>Tool use and grounding: compilers, profilers, schedulers, performance models, and sparse
+        DSLs (e.g., TACO, MLIR SparseTensor) as agent tools</li>
     <li>Correctness and numerical verification of agent-written kernels</li>
     <li>Agentic performance portability across CPUs, GPUs, and accelerators</li>
     <li>Benchmarks, datasets, and evaluation methodology for HPC coding agents</li>
@@ -110,14 +113,17 @@
     rather than the kernel itself.
   </p>
   <p>
-    Papers may be up to 10 pages in IEEE conference format, including references. Each submission
-    receives at least three reviews. Accepted papers appear in the IPDPS workshop proceedings
-    (IPDPSW) and are submitted to the IEEE Xplore Digital Library. At least one author must
-    register and present in person.
+    Full papers may be up to 10 pages in IEEE conference format. A short-paper track of up to 4
+    pages is open to work in progress; short papers are presented at the IPDPS cross-workshop
+    poster session. Submissions are made through Linklings and reviewed single-blind, with at least
+    three reviews per paper. All accepted papers are peer-reviewed and appear in the IPDPS workshop
+    proceedings (IPDPSW) for inclusion in the IEEE Xplore Digital Library. The workshop is held in
+    person, and at least one author of each accepted paper must register and present in person.
   </p>
   <p class="fine">
     Because agentic results vary between runs, submissions should report model version, sampling
-    parameters, and the number of trials behind any reported number.
+    parameters, and the number of trials behind any reported number. Submission of artifacts is
+    encouraged.
   </p>
 </section>
 
@@ -127,7 +133,7 @@
     <tr><td class="date">January 29, 2027</td><td>Paper submission deadline</td></tr>
     <tr><td class="date">February 22, 2027</td><td>Author notification</td></tr>
     <tr><td class="date">March 6, 2027</td><td>Camera-ready deadline</td></tr>
-    <tr><td class="date">June 1–2, 2027</td><td>Workshop</td></tr>
+    <tr><td class="date">June 1 or 2, 2027</td><td>Workshop (half day)</td></tr>
   </table>
   <p class="fine" style="margin-top:1rem">
     All deadlines are Anywhere on Earth. Dates are tentative and will be confirmed after the
@@ -135,9 +141,17 @@
   </p>
 </section>
 
+<section id="organizers">
+  <h2>Organizers</h2>
+  <ul>
+    <li>Ramakrishnan Kannan, Oak Ridge National Laboratory, USA</li>
+    <li>Yongseok Soh, Oak Ridge National Laboratory, USA</li>
+    <li>Ariful Azad, Texas A&amp;M University, USA</li>
+  </ul>
+</section>
+
 <footer>
   <p>
-    Organizers to be announced.
     Questions: <a href="mailto:sohyp@ornl.gov">sohyp@ornl.gov</a>
   </p>
 </footer>
