@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ASK 2027 — Agentic Methods for Sparse and Irregular HPC Kernels</title>
-<meta name="description" content="Half-day workshop on agentic LLM workflows for sparse and irregular HPC kernels, proposed for IPDPS 2027, Seattle.">
+<meta name="description" content="ASK 2027 is an accepted IPDPS 2027 half-day workshop on agentic methods for sparse and irregular HPC kernels, held Wednesday morning, June 2, 2027, in Seattle.">
 <style>
   :root {
     --bg: #ffffff; --fg: #1a1a1a; --muted: #5c5c5c;
@@ -29,6 +29,13 @@
     padding: .7rem .9rem; margin: 1.5rem 0 0;
     font-size: .9rem; color: var(--muted);
   }
+  .notice strong { color: var(--fg); }
+  .status {
+    display: inline-block; margin-bottom: .65rem; padding: .2rem .55rem;
+    border: 1px solid var(--accent); border-radius: 999px;
+    color: var(--accent); font: 700 .72rem/1.4 system-ui, sans-serif;
+    letter-spacing: .08em; text-transform: uppercase;
+  }
   nav { margin: 1.25rem 0 0; font-size: .9rem; }
   nav a { color: var(--fg); margin-right: 1.1rem; text-decoration: none; border-bottom: 1px solid var(--rule); }
   nav a:hover { border-bottom-color: var(--accent); }
@@ -49,16 +56,19 @@
 <div class="wrap">
 
 <header>
+  <span class="status">Accepted workshop</span>
   <h1><span class="acr">ASK 2027</span><br>Workshop on Agentic Methods for Sparse and Irregular HPC Kernels</h1>
-  <p class="venue">Half day, to be held with IPDPS 2027 · June 1 or 2, 2027 · Seattle, Washington</p>
+  <p class="venue">Wednesday morning, June 2, 2027 · Half day · IPDPS 2027 · Seattle, Washington</p>
   <div class="notice">
-    This workshop has been proposed to IPDPS 2027 and is awaiting a decision.
-    Everything on this page is tentative until the notification date of October 12, 2026.
+    <strong>ASK 2027 has been accepted to IPDPS 2027.</strong>
+    The call for papers is being finalized. The submission link, program committee, invited
+    speaker, and detailed program will be posted here as they are confirmed.
   </div>
   <nav>
     <a href="#about">Overview</a>
-    <a href="#cfc">Call for Contributions</a>
+    <a href="#cfp">Call for Papers</a>
     <a href="#dates">Important Dates</a>
+    <a href="#program">Program</a>
     <a href="#organizers">Organizers</a>
   </nav>
 </header>
@@ -70,9 +80,9 @@
     high-performance computing kernels, centered on sparse and irregular kernels. Its premise is
     the distinction between <em>generation</em> and <em>agency</em>. A generative system emits a
     candidate kernel from a prompt. An agentic system selects a data structure, compiles, executes
-    on real hardware, reads performance counters, diagnoses the bottleneck, and revises. The first
-    is now well studied; the second is largely unexamined, and it is where the remaining
-    performance lies.
+    on real hardware, reads performance counters, diagnoses the bottleneck, and revises. Early
+    systems now demonstrate the promise of this closed loop, but methods and evaluation remain
+    fragmented—especially for sparse and irregular workloads.
   </p>
   <p>
     Sparse kernels make this question concrete. The decisions that govern their performance are
@@ -92,9 +102,9 @@
   </p>
 </section>
 
-<section id="cfc">
-  <h2>Call for Contributions</h2>
-  <p>We invite papers on topics including:</p>
+<section id="cfp">
+  <h2>Call for Papers</h2>
+  <p>ASK 2027 invites original papers on topics including:</p>
   <ul>
     <li>Agentic loops for kernel optimization: compile, run, profile, revise; counter- and
         roofline-guided search; autonomous autotuning</li>
@@ -123,7 +133,7 @@
   <p class="fine">
     Because agentic results vary between runs, submissions should report model version, sampling
     parameters, and the number of trials behind any reported number. Submission of artifacts is
-    encouraged.
+    encouraged. The submission link and final deadline information will be posted shortly.
   </p>
 </section>
 
@@ -133,11 +143,25 @@
     <tr><td class="date">January 29, 2027</td><td>Paper submission deadline</td></tr>
     <tr><td class="date">February 22, 2027</td><td>Author notification</td></tr>
     <tr><td class="date">March 6, 2027</td><td>Camera-ready deadline</td></tr>
-    <tr><td class="date">June 1 or 2, 2027</td><td>Workshop (half day)</td></tr>
+    <tr><td class="date">June 1, 2027</td><td>IPDPS cross-workshop poster session, 6:00–8:00 p.m.</td></tr>
+    <tr><td class="date">June 2, 2027</td><td>ASK 2027 workshop, morning (half day)</td></tr>
   </table>
   <p class="fine" style="margin-top:1rem">
-    All deadlines are Anywhere on Earth. Dates are tentative and will be confirmed after the
-    IPDPS 2027 workshop decisions.
+    Paper deadlines are planned and remain subject to final confirmation with IPDPS. Submission
+    deadlines are Anywhere on Earth. The June 2 workshop date is confirmed.
+  </p>
+</section>
+
+<section id="program">
+  <h2>Program</h2>
+  <p>
+    ASK 2027 will be a four-hour morning workshop featuring an invited talk, peer-reviewed
+    technical presentations, and a moderated discussion on evaluation methodology for agentic HPC
+    workflows. The invited speaker and detailed schedule will be announced after confirmation.
+  </p>
+  <p class="fine">
+    The program committee is currently being formed and will be published here once invitations
+    are complete.
   </p>
 </section>
 

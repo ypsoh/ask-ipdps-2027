@@ -1,7 +1,8 @@
-# ASK 2027
+# ASK 2027 website
 
-Tentative website for the proposed workshop **ASK 2027: Agentic Methods for Sparse and
-Irregular HPC Kernels**, submitted to IPDPS 2027 (Seattle, June 1 or 2, 2027).
+Public website for the accepted workshop **ASK 2027: Agentic Methods for Sparse and
+Irregular HPC Kernels**, held with IPDPS 2027 in Seattle on the morning of Wednesday,
+June 2, 2027.
 
 Static single page, no build step. `index.html` is the whole site.
 
@@ -14,9 +15,9 @@ Repo: <https://github.com/ypsoh/ask-ipdps-2027>
 3. Live URL: <https://ypsoh.github.io/ask-ipdps-2027/>
    (already set as `\wsURL` in `../proposal/proposal.tex`)
 
-## After notification (2026-10-12)
+## Publication status
 
-- [ ] Remove the "awaiting a decision" notice if accepted.
-- [ ] Add the keynote, program committee, and schedule once confirmed
-      (tentative in the proposal; intentionally left off the site for now).
+- [x] Announce acceptance and the confirmed June 2 morning slot.
+- [ ] Add the keynote and program committee once confirmed.
 - [ ] Add the Linklings submission link when the CFP is released.
+- [ ] Replace the preliminary program description with the detailed schedule.
