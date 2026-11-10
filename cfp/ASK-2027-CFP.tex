@@ -1,0 +1,94 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.62in]{geometry}
+\usepackage{graphicx,xcolor,enumitem,hyperref,multicol,tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=1.5pt,topsep=2pt}
+\definecolor{askred}{HTML}{7B2933}
+\definecolor{askink}{HTML}{21191B}
+\hypersetup{colorlinks=true,urlcolor=askred,linkcolor=askred}
+\newcommand{\head}[1]{\vspace{4pt}{\large\bfseries\color{askred}#1}\par\vspace{1pt}}
+
+\begin{document}
+
+\begin{center}
+  \includegraphics[width=\textwidth,trim=0 280 0 280,clip]{../assets/ask-2027-hero.jpg}
+  \vspace{5pt}
+
+  {\fontsize{24}{27}\selectfont\bfseries\color{askink} ASK 2027}\par
+  {\fontsize{15}{18}\selectfont\bfseries Workshop on Agentic Methods for Sparse and Irregular HPC Kernels}\par
+  \vspace{3pt}
+  {\bfseries Wednesday morning, June 2, 2027 \textbullet{} IPDPS 2027 \textbullet{} Seattle, Washington}\par
+  \href{https://ypsoh.github.io/ask-ipdps-2027/}{https://ypsoh.github.io/ask-ipdps-2027/}
+\end{center}
+
+\small
+\head{Call for Papers}
+ASK 2027 invites original, unpublished work on agentic methods for high-performance computing
+kernels, with particular emphasis on sparse and irregular workloads. The workshop brings together
+researchers in sparse and combinatorial computation, compilers and performance tools, and agentic
+AI systems. Negative results and failure analyses are explicitly welcome.
+
+\begin{multicols}{2}
+\raggedcolumns
+\head{Topics include}
+\begin{itemize}
+  \item Compile--run--profile--revise optimization loops
+  \item Counter- and roofline-guided agentic search
+  \item Sparse format and algorithm selection
+  \item Input-dependent kernel specialization
+  \item Sparse tensor kernels and decompositions
+  \item Multi-agent generation, verification, tuning, and porting
+  \item Compiler, profiler, performance-model, and sparse-DSL tool use
+  \item Correctness and numerical verification
+  \item Performance portability across CPUs, GPUs, and accelerators
+  \item Benchmarks and evaluation for HPC coding agents
+  \item Cost, energy, and human-in-the-loop tradeoffs
+\end{itemize}
+Dense, stencil, and FFT kernels are in scope when the primary contribution is the agentic method.
+
+\head{Submission tracks}
+\textbf{Full papers:} up to 10 pages for complete research results and substantial systems,
+methods, benchmarks, or empirical studies.
+
+\textbf{Short papers:} up to 4 pages for work in progress, position papers, experience reports,
+negative results, and emerging ideas. Accepted short papers will also be presented at the
+cross-workshop poster session.
+
+\head{Formatting}
+Use the official \href{https://www.ieee.org/conferences/publishing/templates.html}{IEEE conference
+proceedings template}: US Letter (8.5 $\times$ 11 inches), 10-point type, single-spaced,
+double-column. Page limits include the body, figures, and tables; references are excluded.
+Appendices must fit within the applicable limit. Submit one PDF through Linklings.
+
+ASK uses \textbf{single-anonymous review}; include author names, affiliations, and acknowledgments.
+Submissions must not be published or simultaneously under review at another archival venue.
+
+\head{Review and publication}
+Every paper will receive at least three reviews. Accepted full and short papers will appear in the
+IPDPS Workshops proceedings (IPDPSW), submitted for inclusion in IEEE Xplore. At least one author
+of each accepted paper must register and present in person.
+
+Authors should report model and tool versions, sampling parameters, optimization budgets,
+hardware/software environments, correctness criteria, and the number of trials. Code, matrices,
+prompts, agent trajectories, and other artifacts are strongly encouraged.
+
+\head{Important dates}
+\begin{tabular}{@{}>{\bfseries}l l@{}}
+Submission & Jan. 29, 2027, 11:59 p.m. AoE \\
+Notification & Feb. 22, 2027 \\
+Camera-ready & Mar. 6, 2027 \\
+Poster session & June 1, 2027, 6:00--8:00 p.m. \\
+Workshop & June 2, 2027, morning \\
+\end{tabular}
+
+\head{Organizers and contact}
+Ramakrishnan Kannan (ORNL), Yongseok Soh (ORNL), and Ariful Azad (Texas A\&M University).\\
+Questions: \href{mailto:sohyp@ornl.gov}{sohyp@ornl.gov}. The workshop-specific Linklings URL will
+be posted on the workshop website.
+\end{multicols}
+
+\end{document}
