@@ -41,9 +41,15 @@
   nav a:hover { border-bottom-color: var(--accent); }
   section { padding: 2.25rem 0; border-bottom: 1px solid var(--rule); }
   h2 { font-size: 1.15rem; margin: 0 0 1rem; font-weight: 600; letter-spacing: .01em; }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .6rem; font-weight: 600; }
   p { margin: 0 0 1rem; }
   ul { margin: 0 0 1rem; padding-left: 1.2rem; }
   li { margin-bottom: .35rem; }
+  .submission-note {
+    background: var(--band); border: 1px solid var(--rule);
+    padding: .8rem .9rem; margin: 1.25rem 0;
+  }
+  .submission-note p:last-child { margin-bottom: 0; }
   table { border-collapse: collapse; width: 100%; font-size: .95rem; }
   td { padding: .55rem .5rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
   td.date { white-space: nowrap; color: var(--muted); width: 11rem; }
@@ -61,8 +67,8 @@
   <p class="venue">Wednesday morning, June 2, 2027 · Half day · IPDPS 2027 · Seattle, Washington</p>
   <div class="notice">
     <strong>ASK 2027 has been accepted to IPDPS 2027.</strong>
-    The call for papers is being finalized. The submission link, program committee, invited
-    speaker, and detailed program will be posted here as they are confirmed.
+    The call for papers and submission dates are available below. The Linklings submission link,
+    program committee, invited speaker, and detailed program will be posted as they are confirmed.
   </div>
   <nav>
     <a href="#about">Overview</a>
@@ -104,7 +110,13 @@
 
 <section id="cfp">
   <h2>Call for Papers</h2>
-  <p>ASK 2027 invites original papers on topics including:</p>
+  <p>
+    ASK 2027 invites original, unpublished work on agentic methods for high-performance computing
+    kernels, with particular emphasis on sparse and irregular workloads. Submissions must not be
+    under review at another archival venue while they are under consideration by ASK 2027.
+  </p>
+
+  <h3>Topics of interest</h3>
   <ul>
     <li>Agentic loops for kernel optimization: compile, run, profile, revise; counter- and
         roofline-guided search; autonomous autotuning</li>
@@ -122,33 +134,65 @@
     Dense, stencil, and FFT kernels are in scope when the contribution is the agentic method
     rather than the kernel itself.
   </p>
+
+  <h3>Submission tracks</h3>
+  <ul>
+    <li><strong>Full papers:</strong> up to 10 pages for complete research results and substantial
+        system, methodology, benchmark, or empirical contributions.</li>
+    <li><strong>Short papers:</strong> up to 4 pages for work in progress, position papers,
+        experience reports, negative results, and emerging ideas. Accepted short papers will also
+        be presented at the IPDPS cross-workshop poster session.</li>
+  </ul>
+
+  <h3>Formatting and submission requirements</h3>
+  <ul>
+    <li>Submissions must use the official
+        <a href="https://www.ieee.org/conferences/publishing/templates.html">IEEE conference
+        proceedings templates</a> for LaTeX or Microsoft Word.</li>
+    <li>Use US Letter paper (8.5 × 11 inches), 10-point type, single-spaced text, and the
+        double-column IEEE conference layout.</li>
+    <li>The page limit includes the body, figures, and tables. References do not count toward the
+        limit and may extend beyond it. Appendices must fit within the applicable page limit.</li>
+    <li>ASK uses <strong>single-anonymous review</strong>: author names, affiliations, and
+        acknowledgments should appear in the submitted manuscript.</li>
+    <li>Submit one PDF through Linklings. The workshop-specific submission link will be posted
+        here as soon as it is issued by IPDPS.</li>
+  </ul>
+
+  <div class="submission-note">
+    <p><strong>Submission deadline:</strong> January 29, 2027, 11:59 p.m. Anywhere on Earth.</p>
+    <p><strong>Submission site:</strong> Linklings link coming soon.</p>
+  </div>
+
+  <h3>Review, reproducibility, and publication</h3>
   <p>
-    Full papers may be up to 10 pages in IEEE conference format. A short-paper track of up to 4
-    pages is open to work in progress; short papers are presented at the IPDPS cross-workshop
-    poster session. Submissions are made through Linklings and reviewed single-blind, with at least
-    three reviews per paper. All accepted papers are peer-reviewed and appear in the IPDPS workshop
-    proceedings (IPDPSW) for inclusion in the IEEE Xplore Digital Library. The workshop is held in
-    person, and at least one author of each accepted paper must register and present in person.
+    Every submission will receive at least three reviews. Because agentic results can vary between
+    runs, authors should report model and tool versions, sampling parameters, optimization budgets,
+    hardware and software environments, correctness criteria, and the number of trials supporting
+    reported results. Code, matrices, prompts, agent trajectories, and other artifacts are strongly
+    encouraged. Supplementary material may be provided for reproducibility, but reviewers are not
+    required to consider it when judging the paper.
   </p>
-  <p class="fine">
-    Because agentic results vary between runs, submissions should report model version, sampling
-    parameters, and the number of trials behind any reported number. Submission of artifacts is
-    encouraged. The submission link and final deadline information will be posted shortly.
+  <p>
+    Accepted full and short papers will appear in the IPDPS Workshops proceedings (IPDPSW), which
+    are submitted for inclusion in the IEEE Xplore Digital Library. Final papers must follow the
+    IEEE Computer Society conference-publishing instructions supplied after acceptance. At least
+    one author of every accepted paper must register for IPDPS and present the work in person.
   </p>
 </section>
 
 <section id="dates">
   <h2>Important Dates</h2>
   <table>
-    <tr><td class="date">January 29, 2027</td><td>Paper submission deadline</td></tr>
+    <tr><td class="date">January 29, 2027</td><td>Paper submission deadline, 11:59 p.m. AoE</td></tr>
     <tr><td class="date">February 22, 2027</td><td>Author notification</td></tr>
-    <tr><td class="date">March 6, 2027</td><td>Camera-ready deadline</td></tr>
+    <tr><td class="date">March 6, 2027</td><td>Camera-ready deadline for IEEE Xplore inclusion</td></tr>
     <tr><td class="date">June 1, 2027</td><td>IPDPS cross-workshop poster session, 6:00–8:00 p.m.</td></tr>
     <tr><td class="date">June 2, 2027</td><td>ASK 2027 workshop, morning (half day)</td></tr>
   </table>
   <p class="fine" style="margin-top:1rem">
-    Paper deadlines are planned and remain subject to final confirmation with IPDPS. Submission
-    deadlines are Anywhere on Earth. The June 2 workshop date is confirmed.
+    The paper-submission deadline is Anywhere on Earth. March 6 is the IPDPS workshop
+    camera-ready deadline for inclusion in the IPDPSW proceedings.
   </p>
 </section>
 

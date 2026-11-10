@@ -18,6 +18,7 @@ Repo: <https://github.com/ypsoh/ask-ipdps-2027>
 ## Publication status
 
 - [x] Announce acceptance and the confirmed June 2 morning slot.
+- [x] Publish the CFP tracks, formatting requirements, and concrete dates.
 - [ ] Add the keynote and program committee once confirmed.
 - [ ] Add the Linklings submission link when the CFP is released.
 - [ ] Replace the preliminary program description with the detailed schedule.
